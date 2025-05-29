@@ -8,9 +8,9 @@ import {
 
 // Chart 1: Remote Work Application Volume (MODIFIED FOR CYBERSECURITY-SPECIFIC DATA)
 const dataChart1 = [
-  { name: 'On-site', value: 11, fill: '#e74c3c' }, // MODIFIED: 11% for cybersecurity [cite: 52]
-  { name: 'Hybrid', value: 15, fill: '#f39c12' },  // MODIFIED: 15% for cybersecurity [cite: 52]
-  { name: 'Remote', value: 53, fill: '#27ae60' },  // MODIFIED: 53% for cybersecurity [cite: 51]
+  { name: 'On-site', value: 11, fill: '#e74c3c' },
+  { name: 'Hybrid', value: 15, fill: '#f39c12' },
+  { name: 'Remote', value: 53, fill: '#27ae60' },
 ];
 
 // Chart 2: Compensation Comparison
@@ -35,13 +35,11 @@ const dataChart4 = [
   { name: 'Health Insurance', value: 70, fill: '#27ae60' },
 ];
 
-// Chart 5: AI Requirements by Level
+// Chart 5: AI Requirements by Level (MODIFIED TO REFLECT BLURB DATA)
 const dataChart5 = [
-  { name: 'All Roles', value: 52, fill: '#34495e' },
-  { name: 'Non-Mgmt', value: 52, fill: '#3498db' },
-  { name: 'Supervisor', value: 55, fill: '#9b59b6' },
-  { name: 'Manager', value: 48, fill: '#e67e22' },
-  { name: 'Director+', value: 0, fill: '#e74c3c' },
+  { name: 'All Roles (Total Dataset)', value: 52, fill: '#34495e' }, // cite: 125
+  { name: 'Cybersecurity Roles', value: 46, fill: '#3498db' }, // cite: 125
+  { name: 'Director+', value: 0, fill: '#e74c3c' }, // cite: 125
 ];
 
 // Chart 6: Job Duration by Location
@@ -69,7 +67,7 @@ const App = () => {
           <p className="text-lg text-gray-600">Supplemental charts and data visualizations</p>
         </div>
 
-        {/* Chart 1: Remote Work Application Volume - MODIFIED FOR CYBERSECURITY AND SENTENCE CASE */}
+        {/* Chart 1: Remote Work Application Volume */}
         <div className="mb-12 py-6 border-b border-gray-200">
           <h2 className="text-xl font-semibold text-gray-700 text-center">Remote roles attract significantly more applicants in cybersecurity</h2>
           <p className="text-sm text-gray-500 text-center mb-4">Percentage of cybersecurity roles receiving 100+ applications by work location</p>
@@ -77,7 +75,7 @@ const App = () => {
             <BarChart data={dataChart1} margin={{ top: 5, right: 20, left: -20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
-              <YAxis domain={[0, 60]} tickFormatter={(tick) => `${tick}%`} /> {/* MODIFIED: Max changed to 60 */}
+              <YAxis domain={[0, 60]} tickFormatter={(tick) => `${tick}%`} />
               <Tooltip formatter={(value) => [`${value}%`, 'With 100+ Applicants']} />
               <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                 {dataChart1.map((entry, index) => (
@@ -88,11 +86,11 @@ const App = () => {
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
             <h4 className="font-semibold text-blue-700">Key insight</h4>
-            <p className="text-sm text-blue-600">Remote work accounted for only 8% of open cybersecurity roles. Despite this, 53% of remote cybersecurity roles attracted 100+ applicants, compared to only 11% of on-site roles and 15% of hybrid roles.</p>
+            <p className="text-sm text-blue-600">Remote work accounted for only 8% of open cybersecurity roles[cite: 14]. Despite this, 53% of remote cybersecurity roles attracted 100+ applicants[cite: 14], compared to only 11% of on-site roles [cite: 14] and 15% of hybrid roles[cite: 14]. This indicates a clear demand for remote opportunities within cybersecurity.</p>
           </div>
         </div>
 
-        {/* Chart 2: Compensation Comparison - SENTENCE CASE */}
+        {/* Chart 2: Compensation Comparison */}
         <div className="mb-12 py-6 border-b border-gray-200">
           <h2 className="text-xl font-semibold text-gray-700 text-center">Cybersecurity roles offer lower compensation</h2>
           <p className="text-sm text-gray-500 text-center mb-4">Average annual salary by role type (Fortune 100 companies)</p>
@@ -111,11 +109,11 @@ const App = () => {
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
             <h4 className="font-semibold text-blue-700">Key insight</h4>
-            <p className="text-sm text-blue-600">Cybersecurity roles pay $12,700 less than observability positions on average, potentially driving talent toward adjacent fields with similar skill requirements.</p>
+            <p className="text-sm text-blue-600">Cybersecurity roles pay $12,700 less than observability positions on average[cite: 19], potentially driving talent toward adjacent fields with similar skill requirements.</p>
           </div>
         </div>
 
-        {/* Chart 3: Equity Offerings - SENTENCE CASE */}
+        {/* Chart 3: Equity Offerings */}
         <div className="mb-12 py-6 border-b border-gray-200">
           <h2 className="text-xl font-semibold text-gray-700 text-center">Cybersecurity roles rarely offer equity</h2>
           <p className="text-sm text-gray-500 text-center mb-4">Percentage of job postings mentioning equity compensation</p>
@@ -139,11 +137,11 @@ const App = () => {
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
             <h4 className="font-semibold text-blue-700">Key insight</h4>
-            <p className="text-sm text-blue-600">Only 4% of cybersecurity roles mention equity, compared to 15% for observability positions - nearly 4x less likely to offer long-term financial incentives.</p>
+            <p className="text-sm text-blue-600">Only 4% of cybersecurity roles mention equity[cite: 20], compared to 15% for observability positions [cite: 20] - nearly 4x less likely to offer long-term financial incentives.</p>
           </div>
         </div>
 
-        {/* Chart 4: Benefits Focus - SENTENCE CASE */}
+        {/* Chart 4: Benefits Focus */}
         <div className="mb-12 py-6 border-b border-gray-200">
           <h2 className="text-xl font-semibold text-gray-700 text-center">Mental health support severely underrepresented</h2>
           <p className="text-sm text-gray-500 text-center mb-4">Benefit mentions in cybersecurity job descriptions</p>
@@ -162,14 +160,14 @@ const App = () => {
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
             <h4 className="font-semibold text-blue-700">Key insight</h4>
-            <p className="text-sm text-blue-600">Despite widespread burnout in cybersecurity, only 10% of job postings mention mental health support - far below health insurance (70%) and financial benefits (62%).</p>
+            <p className="text-sm text-blue-600">Despite widespread burnout in cybersecurity, only 10% of job postings mention mental health support [cite: 16] - far below health insurance (70%) and financial benefits (62%).</p>
           </div>
         </div>
 
-        {/* Chart 5: AI Requirements by Level - SENTENCE CASE */}
+        {/* Chart 5: AI Requirements by Level - MODIFIED FOR BLURB DATA */}
         <div className="mb-12 py-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-700 text-center">Senior leadership lacks AI strategy requirements</h2>
-          <p className="text-sm text-gray-500 text-center mb-4">AI experience requirements by organizational level</p>
+          <h2 className="text-xl font-semibold text-gray-700 text-center">AI experience requirements across key categories</h2>
+          <p className="text-sm text-gray-500 text-center mb-4">Percentage of roles requiring AI knowledge or experience</p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={dataChart5} margin={{ top: 5, right: 20, left: -20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -185,11 +183,11 @@ const App = () => {
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
             <h4 className="font-semibold text-blue-700">Key insight</h4>
-            <p className="text-sm text-blue-600">While 52% of all IT security roles require AI knowledge, 0% of Senior Director+ positions do, creating a strategic gap in AI leadership.</p>
+            <p className="text-sm text-blue-600">While approximately 52% of the total dataset mentioned required AI knowledge or experience, only 46% of cybersecurity roles required it[cite: 125]. Crucially, 0% of director-level or higher jobs required AI knowledge or experience[cite: 125].</p>
           </div>
         </div>
 
-        {/* Chart 6: Job Duration by Location - SENTENCE CASE */}
+        {/* Chart 6: Job Duration by Location */}
         <div className="py-6">
           <h2 className="text-xl font-semibold text-gray-700 text-center">Remote and hybrid roles fill faster</h2>
           <p className="text-sm text-gray-500 text-center mb-4">Percentage of roles remaining open for over one month</p>
@@ -208,7 +206,7 @@ const App = () => {
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
             <h4 className="font-semibold text-blue-700">Key insight</h4>
-            <p className="text-sm text-blue-600">On-site positions take nearly 3x longer to fill than remote/hybrid roles, indicating stronger candidate interest in flexible work arrangements.</p>
+            <p className="text-sm text-blue-600">On-site positions take nearly 3x longer to fill than remote/hybrid roles[cite: 153], indicating stronger candidate interest in flexible work arrangements.</p>
           </div>
         </div>
 
