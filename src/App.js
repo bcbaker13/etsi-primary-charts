@@ -88,7 +88,7 @@ const App = () => {
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
             <h4 className="font-semibold text-blue-700">Key insight</h4>
-            <p className="text-sm text-blue-600">Remote work accounted for only 8% of open cybersecurity roles[cite: 49]. Despite this, 53% of remote cybersecurity roles attracted 100+ applicants, compared to only 11% of on-site roles and 15% of hybrid roles[cite: 51, 52]. This indicates a clear demand for remote opportunities within cybersecurity.</p>
+            <p className="text-sm text-blue-600">Remote work accounted for only 8% of open cybersecurity roles. Despite this, 53% of remote cybersecurity roles attracted 100+ applicants, compared to only 11% of on-site roles and 15% of hybrid roles.</p>
           </div>
         </div>
 
