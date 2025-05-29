@@ -183,7 +183,7 @@ const App = () => {
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
             <h4 className="font-semibold text-blue-700">Key insight</h4>
-            <p className="text-sm text-blue-600">While approximately 52% of the total dataset mentioned required AI knowledge or experience, only 46% of cybersecurity roles required it[cite: 125]. Crucially, 0% of director-level or higher jobs required AI knowledge or experience[cite: 125].</p>
+            <p className="text-sm text-blue-600">While approximately 52% of the total dataset mentioned required AI knowledge or experience, only 46% of cybersecurity roles required it. Crucially, 0% of director-level or higher jobs required AI knowledge or experience.</p>
           </div>
         </div>
 
