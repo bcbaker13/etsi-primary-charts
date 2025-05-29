@@ -6,11 +6,11 @@ import {
 
 // Data for the charts (extracted from your HTML)
 
-// Chart 1: Remote Work Application Volume
+// Chart 1: Remote Work Application Volume (MODIFIED FOR CYBERSECURITY-SPECIFIC DATA)
 const dataChart1 = [
-  { name: 'On-site', value: 19, fill: '#e74c3c' },
-  { name: 'Hybrid', value: 17, fill: '#f39c12' },
-  { name: 'Remote', value: 43, fill: '#27ae60' },
+  { name: 'On-site', value: 11, fill: '#e74c3c' }, // MODIFIED: 11% for cybersecurity [cite: 52]
+  { name: 'Hybrid', value: 15, fill: '#f39c12' },  // MODIFIED: 15% for cybersecurity [cite: 52]
+  { name: 'Remote', value: 53, fill: '#27ae60' },  // MODIFIED: 53% for cybersecurity [cite: 51]
 ];
 
 // Chart 2: Compensation Comparison
@@ -66,18 +66,18 @@ const App = () => {
       <div className="max-w-4xl mx-auto bg-white p-6 sm:p-10 rounded-lg shadow-xl">
         <div className="text-center mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">2025 Enterprise Cybersecurity Talent Index</h1>
-          <p className="text-lg text-gray-600">Supplemental Charts & Data Visualizations</p>
+          <p className="text-lg text-gray-600">Supplemental charts and data visualizations</p>
         </div>
 
-        {/* Chart 1: Remote Work Application Volume */}
+        {/* Chart 1: Remote Work Application Volume - MODIFIED FOR CYBERSECURITY AND SENTENCE CASE */}
         <div className="mb-12 py-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-700 text-center">Remote Roles Attract Significantly More Applicants</h2>
-          <p className="text-sm text-gray-500 text-center mb-4">Percentage of roles receiving 100+ applications by work location</p>
+          <h2 className="text-xl font-semibold text-gray-700 text-center">Remote roles attract significantly more applicants in cybersecurity</h2>
+          <p className="text-sm text-gray-500 text-center mb-4">Percentage of cybersecurity roles receiving 100+ applications by work location</p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={dataChart1} margin={{ top: 5, right: 20, left: -20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
-              <YAxis domain={[0, 50]} tickFormatter={(tick) => `${tick}%`} />
+              <YAxis domain={[0, 60]} tickFormatter={(tick) => `${tick}%`} /> {/* MODIFIED: Max changed to 60 */}
               <Tooltip formatter={(value) => [`${value}%`, 'With 100+ Applicants']} />
               <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                 {dataChart1.map((entry, index) => (
@@ -87,21 +87,21 @@ const App = () => {
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
-            <h4 className="font-semibold text-blue-700">Key Insight</h4>
-            <p className="text-sm text-blue-600">Despite representing only 12% of available positions, remote roles are 2.3x more likely to attract over 100 applicants than on-site roles, indicating a severe supply-demand mismatch.</p>
+            <h4 className="font-semibold text-blue-700">Key insight</h4>
+            <p className="text-sm text-blue-600">Remote work accounted for only 8% of open cybersecurity roles[cite: 49]. Despite this, 53% of remote cybersecurity roles attracted 100+ applicants, compared to only 11% of on-site roles and 15% of hybrid roles[cite: 51, 52]. This indicates a clear demand for remote opportunities within cybersecurity.</p>
           </div>
         </div>
 
-        {/* Chart 2: Compensation Comparison */}
+        {/* Chart 2: Compensation Comparison - SENTENCE CASE */}
         <div className="mb-12 py-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-700 text-center">Cybersecurity Roles Offer Lower Compensation</h2>
+          <h2 className="text-xl font-semibold text-gray-700 text-center">Cybersecurity roles offer lower compensation</h2>
           <p className="text-sm text-gray-500 text-center mb-4">Average annual salary by role type (Fortune 100 companies)</p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={dataChart2} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" tick={{ fontSize: 12 }} />
               <YAxis domain={[145000, 170000]} tickFormatter={(tick) => `$${tick/1000}K`} width={80} />
-              <Tooltip formatter={(value) => [`$${(value/1000).toFixed(1)}K`, 'Average Salary']} />
+              <Tooltip formatter={(value) => [`$${(value/1000).toFixed(1)}K`, 'Average salary']} />
               <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                 {dataChart2.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.fill} />
@@ -110,14 +110,14 @@ const App = () => {
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
-            <h4 className="font-semibold text-blue-700">Key Insight</h4>
+            <h4 className="font-semibold text-blue-700">Key insight</h4>
             <p className="text-sm text-blue-600">Cybersecurity roles pay $12,700 less than observability positions on average, potentially driving talent toward adjacent fields with similar skill requirements.</p>
           </div>
         </div>
 
-        {/* Chart 3: Equity Offerings */}
+        {/* Chart 3: Equity Offerings - SENTENCE CASE */}
         <div className="mb-12 py-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-700 text-center">Cybersecurity Roles Rarely Offer Equity</h2>
+          <h2 className="text-xl font-semibold text-gray-700 text-center">Cybersecurity roles rarely offer equity</h2>
           <p className="text-sm text-gray-500 text-center mb-4">Percentage of job postings mentioning equity compensation</p>
           <ResponsiveContainer width="100%" height={350}>
             <PieChart>
@@ -138,21 +138,21 @@ const App = () => {
             </PieChart>
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
-            <h4 className="font-semibold text-blue-700">Key Insight</h4>
+            <h4 className="font-semibold text-blue-700">Key insight</h4>
             <p className="text-sm text-blue-600">Only 4% of cybersecurity roles mention equity, compared to 15% for observability positions - nearly 4x less likely to offer long-term financial incentives.</p>
           </div>
         </div>
 
-        {/* Chart 4: Benefits Focus */}
+        {/* Chart 4: Benefits Focus - SENTENCE CASE */}
         <div className="mb-12 py-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-700 text-center">Mental Health Support Severely Underrepresented</h2>
+          <h2 className="text-xl font-semibold text-gray-700 text-center">Mental health support severely underrepresented</h2>
           <p className="text-sm text-gray-500 text-center mb-4">Benefit mentions in cybersecurity job descriptions</p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={dataChart4} layout="vertical" margin={{ top: 5, right: 30, left: 100, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="number" domain={[0, 80]} tickFormatter={(tick) => `${tick}%`} />
               <YAxis type="category" dataKey="name" width={100} tick={{ fontSize: 12 }}/>
-              <Tooltip formatter={(value) => [`${value}%`, '% of Job Postings']} />
+              <Tooltip formatter={(value) => [`${value}%`, '% of job postings']} />
               <Bar dataKey="value" radius={[0, 4, 4, 0]}>
                 {dataChart4.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.fill} />
@@ -161,21 +161,21 @@ const App = () => {
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
-            <h4 className="font-semibold text-blue-700">Key Insight</h4>
+            <h4 className="font-semibold text-blue-700">Key insight</h4>
             <p className="text-sm text-blue-600">Despite widespread burnout in cybersecurity, only 10% of job postings mention mental health support - far below health insurance (70%) and financial benefits (62%).</p>
           </div>
         </div>
 
-        {/* Chart 5: AI Requirements by Level */}
+        {/* Chart 5: AI Requirements by Level - SENTENCE CASE */}
         <div className="mb-12 py-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-700 text-center">Senior Leadership Lacks AI Strategy Requirements</h2>
+          <h2 className="text-xl font-semibold text-gray-700 text-center">Senior leadership lacks AI strategy requirements</h2>
           <p className="text-sm text-gray-500 text-center mb-4">AI experience requirements by organizational level</p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={dataChart5} margin={{ top: 5, right: 20, left: -20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" tick={{ fontSize: 12 }}/>
               <YAxis domain={[0, 60]} tickFormatter={(tick) => `${tick}%`} />
-              <Tooltip formatter={(value) => [`${value}%`, '% Requiring AI Experience']} />
+              <Tooltip formatter={(value) => [`${value}%`, '% requiring AI experience']} />
               <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                 {dataChart5.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.fill} />
@@ -184,21 +184,21 @@ const App = () => {
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
-            <h4 className="font-semibold text-blue-700">Key Insight</h4>
+            <h4 className="font-semibold text-blue-700">Key insight</h4>
             <p className="text-sm text-blue-600">While 52% of all IT security roles require AI knowledge, 0% of Senior Director+ positions do, creating a strategic gap in AI leadership.</p>
           </div>
         </div>
 
-        {/* Chart 6: Job Duration by Location */}
+        {/* Chart 6: Job Duration by Location - SENTENCE CASE */}
         <div className="py-6">
-          <h2 className="text-xl font-semibold text-gray-700 text-center">Remote & Hybrid Roles Fill Faster</h2>
+          <h2 className="text-xl font-semibold text-gray-700 text-center">Remote and hybrid roles fill faster</h2>
           <p className="text-sm text-gray-500 text-center mb-4">Percentage of roles remaining open for over one month</p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={dataChart6} margin={{ top: 5, right: 20, left: -20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis domain={[0, 16]} tickFormatter={(tick) => `${tick}%`} />
-              <Tooltip formatter={(value) => [`${value}%`, '% Open >1 Month']} />
+              <Tooltip formatter={(value) => [`${value}%`, '% open >1 month']} />
               <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                 {dataChart6.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.fill} />
@@ -207,7 +207,7 @@ const App = () => {
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-md">
-            <h4 className="font-semibold text-blue-700">Key Insight</h4>
+            <h4 className="font-semibold text-blue-700">Key insight</h4>
             <p className="text-sm text-blue-600">On-site positions take nearly 3x longer to fill than remote/hybrid roles, indicating stronger candidate interest in flexible work arrangements.</p>
           </div>
         </div>
