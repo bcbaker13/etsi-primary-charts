@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/etsi-primary-charts/static/css/main.e6c13ad2.css",
-    "main.js": "/etsi-primary-charts/static/js/main.22fbacbc.js",
+    "main.js": "/etsi-primary-charts/static/js/main.65b2ae83.js",
     "static/js/453.1163a650.chunk.js": "/etsi-primary-charts/static/js/453.1163a650.chunk.js",
     "index.html": "/etsi-primary-charts/index.html",
     "main.e6c13ad2.css.map": "/etsi-primary-charts/static/css/main.e6c13ad2.css.map",
-    "main.22fbacbc.js.map": "/etsi-primary-charts/static/js/main.22fbacbc.js.map",
+    "main.65b2ae83.js.map": "/etsi-primary-charts/static/js/main.65b2ae83.js.map",
     "453.1163a650.chunk.js.map": "/etsi-primary-charts/static/js/453.1163a650.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.22fbacbc.js"
+    "static/js/main.65b2ae83.js"
   ]
 }
